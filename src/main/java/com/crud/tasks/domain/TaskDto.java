@@ -11,8 +11,5 @@ public class TaskDto {
     private String title;
     private String content;
 
-    @Override
-    public String toString() {
-        return  id + " " + title + " " + content;
-    }
+
 }
