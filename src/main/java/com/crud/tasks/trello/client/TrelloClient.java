@@ -16,6 +16,12 @@ import java.util.Optional;
 @Component
 public class TrelloClient {
 
+    private final static String KEY = "key";
+    private final static String TOKEN = "token";
+    private final static String FIELDS = "fields";
+    private final static String NAME = "name";
+    private final static String ID = "id";
+
     @Value("${trello.api.endpoint.prod}")
     private String trelloApiEndpoint;
 
@@ -37,17 +43,13 @@ public class TrelloClient {
         Optional<TrelloBoardDto[]> boardsResponse = Optional.ofNullable(restTemplate.getForObject(getUri(),
                 TrelloBoardDto[].class));
 
-        if (boardsResponse.isPresent()) {
-            return Arrays.asList(boardsResponse.get());
-        }
-        return new ArrayList<>();
-
+            return boardsResponse.map(Arrays::asList).orElseGet(ArrayList::new);
     }
 
     private URI getUri() {
         return UriComponentsBuilder.fromHttpUrl(trelloApiEndpoint + "/members/" + trelloUserName + "/boards")
-                .queryParam("key", trelloAppKey)
-                .queryParam("token", trelloToken)
-                .queryParam("fields", "name,id").build().encode().toUri();
+                .queryParam(KEY, trelloAppKey)
+                .queryParam(TOKEN, trelloToken)
+                .queryParam(FIELDS, NAME,ID).build().encode().toUri();
     }
 }
