@@ -11,7 +11,7 @@ import java.util.List;
 
 import org.springframework.http.MediaType;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1/task")
 public class TaskController {
