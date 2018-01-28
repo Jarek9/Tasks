@@ -30,9 +30,9 @@ public class TrelloMapperTest {
         List<TrelloListDto> trelloListDtos2 = new ArrayList<TrelloListDto>(Arrays.asList(trelloListDto1, trelloListDto1, trelloListDto1, trelloListDto2, trelloListDto3));
         List<TrelloListDto> trelloListDtos3 = new ArrayList<TrelloListDto>(Arrays.asList(trelloListDto2, trelloListDto3));
 
-        TrelloBoardDto trelloBoardDto1 = new TrelloBoardDto("Board 1", "Table 1", trelloListDtos1);
-        TrelloBoardDto trelloBoardDto2 = new TrelloBoardDto("Board 2", "Table 2", trelloListDtos2);
-        TrelloBoardDto trelloBoardDto3 = new TrelloBoardDto("Board 3", "Table 3", trelloListDtos3);
+        TrelloBoardDto trelloBoardDto1 = new TrelloBoardDto("Table 1", "Board 1", trelloListDtos1);
+        TrelloBoardDto trelloBoardDto2 = new TrelloBoardDto("Table 2", "Board 2", trelloListDtos2);
+        TrelloBoardDto trelloBoardDto3 = new TrelloBoardDto("Table 3", "Board 3", trelloListDtos3);
 
         List<TrelloBoardDto> trelloBoardDtos = new ArrayList<TrelloBoardDto>(Arrays.asList(trelloBoardDto1, trelloBoardDto2, trelloBoardDto3));
 
