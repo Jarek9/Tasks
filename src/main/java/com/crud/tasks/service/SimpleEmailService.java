@@ -20,12 +20,13 @@ public class SimpleEmailService {
 
     @Autowired
     private JavaMailSender javaMailSender;
+    @Autowired
     private MailCreatorService mailCreatorService;
 
     public void send(final Mail mail) {
         LOGGER.info("Starting email preparation...");
     try {
-        javaMailSender.send(createMailMessage(mail));
+        javaMailSender.send(createMimeMessage(mail));
         LOGGER.info("Email has been sent.");
     } catch (MailException e) {
         LOGGER.error("Failed to process email sending: ", e.getMessage(), e);
