@@ -30,7 +30,7 @@ public class TrelloValidatorTest {
         List<TrelloList> trelloLists = new ArrayList<>();
         TrelloList list = new TrelloList("Id 1", "Test", false);
         trelloLists.add(list);
-        TrelloBoard board1 = new TrelloBoard("Id 1", "Test", trelloLists);
+        TrelloBoard board1 = new TrelloBoard("Id 1", "Board 1", trelloLists);
         TrelloBoard board2 = new TrelloBoard("Id 2", "Board 2", trelloLists);
         trelloBoards.add(board1);
         trelloBoards.add(board2);
@@ -39,7 +39,7 @@ public class TrelloValidatorTest {
         List<TrelloBoard> testList = validator.validateTrelloBoards(trelloBoards);
         //Then
         Assert.assertEquals(1, testList.size());
-        Assert.assertEquals("Id 1", testList.get(0).getId());
+        Assert.assertEquals("Id 2", testList.get(0).getId());
     }
 
 }
