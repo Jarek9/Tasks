@@ -66,7 +66,7 @@ public class DbServiceTest {
         //Given
         Long id = 1L;
         //When
-        dbService.deleteById(id);
+        dbService.deleteTask(id);
         //Then
         verify(taskRepository, times(1)).deleteById(id);
     }
